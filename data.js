@@ -134,6 +134,74 @@ const CAD = [
     software: "SOLIDWORKS"
   },
   {
+    name: "Airframe Tube",
+    image: "images/cad/airframe-tube.png",
+    category: "Team",
+    madeFor: "Gryphon Rocketry, solid rocket for Launch Canada 2027",
+    purpose:
+      "A body tube of the rocket's airframe. Its dimensions are driven by a shared variables file, so the whole airframe can change in one place, and I assigned its material to check the model's mass against the team's OpenRocket simulation.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Airframe Coupler",
+    image: "images/cad/airframe-coupler.png",
+    category: "Team",
+    madeFor: "Gryphon Rocketry, solid rocket for Launch Canada 2027",
+    purpose:
+      "The coupler that slides inside two airframe tubes to join them. It is driven by the same shared variables file as the tubes, so the fit updates when the airframe dimensions change.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Drogue Parachute, Packed",
+    image: "images/cad/drogue-24-packed.png",
+    white: true,
+    category: "Team",
+    madeFor: "Gryphon Rocketry, recovery hardware fit check",
+    purpose:
+      "A simplified model of the 24 inch drogue parachute at its packed size. It stands in for the real parachute in the assembly, to check that the recovery system fits inside the airframe.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Drogue Shock Cord, Packed",
+    image: "images/cad/drogue-cord-packed.png",
+    white: true,
+    category: "Team",
+    madeFor: "Gryphon Rocketry, recovery hardware fit check",
+    purpose:
+      "A simplified model of the drogue shock cord at its packed size, used to reserve its space inside the airframe during the recovery fit check.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Main Parachute, Packed",
+    image: "images/cad/main-iris60-packed.png",
+    white: true,
+    category: "Team",
+    madeFor: "Gryphon Rocketry, recovery hardware fit check",
+    purpose:
+      "A simplified model of the 60 inch main parachute at its packed size. This is the part I flagged as possibly too large in diameter for the 4 inch airframe, so the model lets the team check it before ordering.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Main Shock Cord, Packed",
+    image: "images/cad/main-cord-packed.png",
+    white: true,
+    category: "Team",
+    madeFor: "Gryphon Rocketry, recovery hardware fit check",
+    purpose:
+      "A simplified model of the main shock cord at its packed size, used to reserve its space inside the airframe during the recovery fit check.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Piranha Line Cutter",
+    image: "images/cad/piranha-cutter.png",
+    white: true,
+    category: "Team",
+    madeFor: "Gryphon Rocketry, recovery hardware fit check",
+    purpose:
+      "A simplified model of the Piranha line cutter, sized to the real part so it can be placed in the recovery assembly and checked for fit.",
+    software: "SOLIDWORKS"
+  },
+  {
     name: "Wing",
     image: "images/cad/wing.png",
     category: "Training",

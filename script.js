@@ -161,7 +161,7 @@ if (gallery) {
       .filter(({ c }) => current === "All" || c.category === current)
       .map(({ c, i }) => `
         <button class="tile" data-cad="${i}" aria-label="Open ${esc(c.name)}">
-          <span class="frame"><img src="${esc(c.image)}" alt="CAD render of ${esc(c.name)}" loading="lazy"></span>
+          <span class="frame${c.white ? " sheet" : ""}"><img src="${esc(c.image)}" alt="CAD render of ${esc(c.name)}" loading="lazy"></span>
           <span class="tile-caption"><strong>${esc(c.name)}</strong><span class="label">${esc(c.category)}</span></span>
         </button>`).join("");
   };
@@ -178,7 +178,7 @@ if (gallery) {
     const c = CAD[tile.dataset.cad];
     openModal(`
       <div class="modal-cad">
-        <span class="frame"><img src="${esc(c.image)}" alt="CAD render of ${esc(c.name)}"></span>
+        <span class="frame${c.white ? " sheet" : ""}"><img src="${esc(c.image)}" alt="CAD render of ${esc(c.name)}"></span>
         <div class="modal-body">
           <p class="label">${esc(c.category)}</p>
           <h2>${esc(c.name)}</h2>
