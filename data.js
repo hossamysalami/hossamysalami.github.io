@@ -134,6 +134,51 @@ const CAD = [
     software: "SOLIDWORKS"
   },
   {
+    name: "Top Plate",
+    image: "images/cad/top-plate.png",
+    category: "Team",
+    madeFor: "Gryphon Aerospace Club, two-axis camera gimbal (part GIM-TOP-PLT-01)",
+    purpose:
+      "The plate the whole gimbal hangs from. The 6806 yaw bearing drops into a pocket in the raised boss and rests on a 1 mm lip, and the hole pattern carries the cap ring, the yaw servo bracket and the future vibration isolation mount.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Bearing Cap Ring",
+    image: "images/cad/bearing-cap-ring.png",
+    category: "Team",
+    madeFor: "Gryphon Aerospace Club, two-axis camera gimbal (part GIM-CAP-RNG-01)",
+    purpose:
+      "Screws onto the top plate boss with three M3 screws and stops the yaw bearing from lifting out. It presses on the bearing's outer race only, and its bore clears the inner race and hub.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Yaw Hub",
+    image: "images/cad/yaw-hub.png",
+    category: "Team",
+    madeFor: "Gryphon Aerospace Club, two-axis camera gimbal (part GIM-YAW-HUB-01)",
+    purpose:
+      "The rotating centre of the yaw axis. Its journal runs in the 6806 bearing, the servo horn screws to the bridge on top, the flange bolts to the L-bracket crossbar, and the two slots pass the camera cables through the middle.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Hub Clamp Collar",
+    image: "images/cad/hub-clamp-collar.png",
+    category: "Team",
+    madeFor: "Gryphon Aerospace Club, two-axis camera gimbal (part GIM-HUB-COL-01)",
+    purpose:
+      "Clamps onto the yaw hub above the bearing and holds the gimbal's weight. The slit and M3 pinch screw let the ring squeeze the hub, and a small step on the bottom rests on the bearing's inner race only.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Yaw Servo Bracket",
+    image: "images/cad/yaw-servo-bracket.png",
+    category: "Team",
+    madeFor: "Gryphon Aerospace Club, two-axis camera gimbal (part GIM-YAW-BRK-01)",
+    purpose:
+      "Holds the yaw servo above the top plate with its output shaft pointing down the yaw axis. The legs clear the cap ring and collar, and the open sides let the USB cables leave the hub.",
+    software: "SOLIDWORKS"
+  },
+  {
     name: "Airframe Tube",
     image: "images/cad/airframe-tube.png",
     category: "Team",
