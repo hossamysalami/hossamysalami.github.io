@@ -550,8 +550,11 @@ dialog.modal.wide { width: min(1180px, calc(100vw - 32px)); }
   align-items: center;
 }
 
+.spot-grid > * { min-width: 0; }
+
 .spot-art {
   margin: 0;
+  max-width: 100%;
   border: 1px solid var(--line);
   border-radius: 14px;
   overflow: hidden;
