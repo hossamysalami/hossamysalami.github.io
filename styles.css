@@ -542,6 +542,54 @@ dialog.modal.wide { width: min(1180px, calc(100vw - 32px)); }
 
 .section.tinted { background: var(--surface); }
 
+/* Featured gimbal spotlight */
+.spot-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.spot-art {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f6f7fa;
+  box-shadow: 0 24px 60px rgba(20, 30, 60, 0.12);
+}
+
+.spot-art video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+.spot-art figcaption { padding: 10px 16px; border-top: 1px solid var(--line); background: var(--bg); }
+
+.spotlight h2 { margin: 10px 0 18px; }
+.spotlight .lede { font-size: 18px; }
+
+.spot-facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spot-facts li {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+}
+
+.spot-facts strong { display: block; font-size: 22px; font-weight: 650; letter-spacing: -0.01em; }
+.spot-facts span { color: var(--muted); font-size: 14px; }
+
+.spotlight .actions { margin-top: 28px; }
+
+@media (max-width: 860px) {
+  .spot-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
 .card.now { border-top: 3px solid var(--accent); }
 .card.now h3 { margin-top: -4px; }
 

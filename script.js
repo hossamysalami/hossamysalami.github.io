@@ -73,7 +73,9 @@ document.addEventListener("error", (e) => {
 
 const drawingGrid = document.getElementById("drawing-gallery");
 if (drawingGrid) {
-  DRAWINGS.sort((a, b) => a.image.localeCompare(b.image)); // follow the 00, 01, 02... sheet numbers
+  // Newest set (GMB-000 sheets) first, then the earlier sheets in 00, 01, 02... order.
+  const rank = (d) => (d.image.includes("/GMB-") ? "0" : "1") + d.image;
+  DRAWINGS.sort((a, b) => rank(a).localeCompare(rank(b)));
   drawingGrid.innerHTML = DRAWINGS.map((d, i) => `
     <button class="tile" data-drawing="${i}" aria-label="Open ${esc(d.name)} drawing">
       <span class="frame sheet">${drawingImg(d)}</span>
@@ -93,7 +95,7 @@ if (drawingGrid) {
           <h4>Purpose</h4>
           <p>${esc(d.purpose)}</p>
           <h4>Made for</h4>
-          <p>Gryphon Aerospace Club, two-axis camera gimbal. Drawn by me as part of the gimbal drawing set, before the parts were modelled in SOLIDWORKS.</p>
+          <p>Gryphon Aerospace Club, two-axis camera gimbal. Drawn by me as part of the gimbal drawing set.</p>
         </div>
       </div>`, true);
   });
@@ -112,10 +114,9 @@ if (teamGrid) {
       <button class="btn small" data-team="${esc(p.id)}">Details</button>
     </article>`).join("");
 
-  teamGrid.addEventListener("click", (e) => {
-    const btn = e.target.closest("[data-team]");
-    if (!btn) return;
-    const p = TEAM.find((x) => x.id === btn.dataset.team);
+  const openTeam = (id) => {
+    const p = TEAM.find((x) => x.id === id);
+    if (!p) return;
     openModal(`
       <div class="modal-body">
         <p class="label">${esc(p.when)} &middot; ${esc(p.status)}</p>
@@ -131,7 +132,15 @@ if (teamGrid) {
         <p>${p.tools.map(esc).join(" &middot; ")}</p>
         ${p.id === "aerospace" ? '<div class="actions"><a class="btn small" href="cad.html#drawings">See the gimbal drawings</a><a class="btn small ghost" href="cad.html">See the CAD parts</a></div>' : ""}
       </div>`);
+  };
+
+  teamGrid.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-team]");
+    if (btn) openTeam(btn.dataset.team);
   });
+
+  // Links like team.html#aerospace open that project's details straight away.
+  if (location.hash) openTeam(location.hash.slice(1));
 }
 
 /* ---------- Personal projects ---------- */

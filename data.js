@@ -56,10 +56,12 @@ const TEAM = [
       "Worked out how far away each camera can read a tag and checked that both work with the onboard Raspberry Pi.",
       "When purchasing rules ruled out the original overseas supplier, found a replacement camera from a US distributor and updated the mount design to suit it.",
       "Set the layout for a two-axis, servo-driven gimbal carrying both cameras, with both rotation axes through the wide lens's no-parallax point.",
-      "Prepared a nine-sheet drawing set with an assembly sheet and bill of materials, and modelled the camera cradle, pitch coupler and L-bracket in SOLIDWORKS.",
+      "Prepared a nine-sheet drawing set with an assembly sheet and bill of materials, and modelled every gimbal part in SOLIDWORKS.",
       "Measured the servo and horn, found the horn face sat 2.3 mm higher than assumed, and corrected the servo mounts before any parts were printed.",
+      "Redesigned the gimbal after design review: detachable servo mounts, flush horn recesses, reachable M3 screws, and a printed mass cut from 469 g to 410 g (12.7%).",
+      "Produced the updated drawing set GMB-000 (assembly with an 18-item BOM, and an exploded view with a nine-step assembly sequence) and sent the parts to print in PETG for fit and motion testing.",
       "Researching a passive vibration isolation mount so motor vibration does not blur the images.",
-      "Split the CAD work with a teammate and made short narrated videos explaining how the gimbal moves."
+      "Made short narrated videos and a 34 second animation explaining how the gimbal assembles and moves."
     ],
     tools: ["SOLIDWORKS", "Engineering drawings", "3D printing", "Raspberry Pi", "Component selection"]
   },
@@ -98,6 +100,12 @@ const PERSONAL = [
       "A quadcopter with a 3D-printed frame, built to learn how drone structures, propulsion and electronics fit together outside of a club setting."
   },
   {
+    name: "RC Plane",
+    status: "Planned",
+    summary:
+      "A radio-controlled plane I am designing and building myself, to put wing design, weight and balance, and control surfaces into practice on something that has to fly."
+  },
+  {
     name: "This portfolio website",
     status: "In progress",
     summary:
@@ -106,6 +114,15 @@ const PERSONAL = [
 ];
 
 const CAD = [
+  {
+    name: "Gimbal Assembly",
+    image: "images/cad/gimbal-assembly.png",
+    category: "Team",
+    madeFor: "Gryphon Aerospace Club, two-axis camera gimbal (drawing GMB-000)",
+    purpose:
+      "The full two-axis gimbal: a yaw stage hanging from the top plate on a 6806 bearing, and an L-bracket carrying the pitch shaft on two 608 bearings, both driven by FrSky servos. The redesign makes both servos removable with four screws each, sets the servo horns into recesses so the screws don't carry the torque, and moves to M3 hardware throughout. Printed mass dropped from 469 g to 410 g (12.7% lighter), and the parts went to the printer in PETG for test fitting.",
+    software: "SOLIDWORKS"
+  },
   {
     name: "Camera Cradle",
     image: "images/cad/camera-cradle.png",
@@ -284,6 +301,20 @@ const CAD = [
 const DRAWINGS = [
   {
     name: "Gimbal Assembly",
+    partNo: "GMB-000 Sheet 1",
+    image: "images/Drawings/GMB-000-Sheet1-Assembly",
+    purpose:
+      "The assembly sheet: front, top and right views of the finished gimbal with an 18-item bill of materials. This version came out of design review feedback: detachable servo mounts, horn recesses so the horns sit flush, reachable screws and M3 hardware throughout."
+  },
+  {
+    name: "Gimbal Assembly, Exploded",
+    partNo: "GMB-000 Sheet 2",
+    image: "images/Drawings/GMB-000-Sheet2-Exploded",
+    purpose:
+      "The exploded view along the yaw and pitch axes with the nine-step assembly sequence, from melting in the 20 heat-set inserts to fitting the camera cradle. Either servo can be taken out by removing one plate held by four screws."
+  },
+  {
+    name: "Gimbal Assembly, First Version",
     partNo: "GIM-ASSY-01",
     image: "images/Drawings/00-Gimbal-Assembly",
     purpose:
