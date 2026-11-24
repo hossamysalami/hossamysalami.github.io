@@ -41,6 +41,9 @@ const TEAM = [
     short: "UAV camera and gimbal system",
     org: "Flight Systems Team, University of Guelph",
     role: "Camera Systems Lead",
+    video: "images/video/gimbal.mp4",
+    poster: "images/video/gimbal-poster.jpg",
+    videoCaption: "Two-axis camera gimbal: explode, pitch 0–90°, yaw ±90°",
     when: "Fall 2026 to present",
     status: "In progress",
     summary:
@@ -69,18 +72,19 @@ const TEAM = [
     id: "rocketry",
     name: "Gryphon Rocketry",
     short: "University of Guelph Rocketry Club",
-    org: "Solid and liquid rocket projects, University of Guelph",
-    role: "Team Member, Recovery and Airframe",
+    org: "Solid and liquid rocket teams, University of Guelph",
+    role: "Member, Solid and Liquid Rocket Teams",
     when: "Fall 2026 to present",
     status: "In progress",
     summary:
-      "Selecting recovery hardware and modelling the airframe for a high-power solid rocket competing at Launch Canada 2027.",
+      "Member of both the solid and liquid rocket teams. On the solid rocket for Launch Canada 2027, I select recovery hardware and model the airframe.",
     competition: [
-      "The club is building a high-power solid rocket to compete at Launch Canada 2027.",
+      "The club runs two rocket teams, one building a solid rocket and one building a liquid rocket, and I'm a member of both.",
+      "The solid team is building a high-power rocket to compete at Launch Canada 2027.",
       "My work is on the recovery system, which brings the rocket down safely under drogue and main parachutes, and on the airframe CAD."
     ],
     roleText:
-      "Team member on the solid and liquid rocket projects. I completed three component selection tasks and then moved on to airframe and recovery CAD in SOLIDWORKS.",
+      "Member of the solid and liquid rocket teams. I completed three component selection tasks and then moved on to airframe and recovery CAD in SOLIDWORKS.",
     contributions: [
       "Recovery linkage: compared quick links, swivels, eyebolts and threaded rod, separating working load, shock load and breaking strength, and delivered a costed component list in Canadian dollars.",
       "Parachutes and shock cord: selected the drogue and main parachutes and tubular Kevlar shock cords rated 3600 lb against a 1500 lb requirement.",
@@ -89,10 +93,101 @@ const TEAM = [
       "Recovery fit check (in progress): modelling the packed parachutes and shock cords to confirm the full recovery system fits inside the airframe, and proposed how to split that task between three members."
     ],
     tools: ["SOLIDWORKS", "OpenRocket", "Load ratings", "Component selection"]
+  },
+  {
+    id: "cubics",
+    name: "CUBICS CubeSat",
+    short: "University of Guelph CubeSat team",
+    org: "Mechanical and Thermal sub-team, University of Guelph",
+    role: "Mechanisms and CAD Engineer (proposed)",
+    when: "Fall 2026",
+    status: "Application submitted, awaiting CSA decision",
+    summary:
+      "A student team applying to the Canadian Space Agency's Canadian CubeSat Project with a 3U satellite that would study how leaves lose heat in orbit.",
+    competition: [
+      "CUBICS is the University of Guelph's student CubeSat team. It applied to the Canadian Space Agency's Canadian CubeSat Project with a 3U satellite that would measure how model leaves lose heat in the still air of orbit, research that supports growing plants in space.",
+      "If selected, the project would start in 2027, with launch planned for 2030–2031."
+    ],
+    roleText:
+      "I'm named in the submitted application as Mechanisms and CAD Engineer on the Mechanical and Thermal sub-team, and my narrative CV is part of the submission.",
+    contributionsTitle: "Planned work, if selected",
+    contributions: [
+      "A team-built drag sail of about 1 m² that deorbits the satellite within five years",
+      "Two deployable solar wings, built with the power sub-team",
+      "Layout CAD that fits the payload, bus and boards inside the 3U frame",
+      "A sail deployment prototype and a cold deployment of one solar wing by the preliminary design review (2028)",
+      "Vibration testing of the mechanisms before the critical design review (2029)"
+    ],
+    tools: ["SOLIDWORKS", "Mechanism design", "Spacecraft layout"]
   }
 ];
 
 const PERSONAL = [
+  {
+    id: "lapdesk",
+    name: "3D-Printed Folding Lap Desk",
+    status: "Designed, ready to print",
+    when: "Fall 2026",
+    image: "images/lapdesk/render-in-use.png",
+    summary:
+      "A height-adjustable lap desk that folds flat, designed so every structural part prints on a home 3D printer and the only bought parts are about $19 of bolts and nuts.",
+    facts: [
+      ["240–320 mm", "height, five settings"],
+      ["~49 mm", "thick when folded"],
+      ["9", "printed part designs"],
+      ["~$19", "of bought hardware"]
+    ],
+    steps: [
+      {
+        title: "Problem",
+        text: [
+          "I wanted a desk for working on my lap or a bed that adjusts in height and folds flat to store, and I wanted to make it myself instead of buying one.",
+          "The catch: a 500 × 320 mm top is too big to print in one piece, plastic legs have to lock solidly at each height, and the whole thing had to print without support material and use only cheap hardware-store parts."
+        ]
+      },
+      {
+        title: "Design",
+        list: [
+          "Top: split into four 250 × 160 mm tiles that slide together on dovetails and lock with tapered wedge keys. A 3 mm skin over 13 mm ribs keeps it stiff and light at 16 mm thick. Only two tile designs are needed, each printed twice.",
+          "Height: each leg is a Ø20 inner leg sliding in a Ø25 sleeve. A twist ring carries a peg that runs up a groove, then turns 90° into one of five notches, giving 240 to 320 mm in 20 mm steps.",
+          "Folding: the legs pivot on M5 bolts through hinge stubs under the top. A sliding collar over each hinge locks the leg upright; slide it down, fold the leg in, and it snaps into a clip. Folded, the desk is about 49 mm thick.",
+          "Designed for printing: the dovetail faces sit at 45° so they print without supports, sockets have 0.3 mm clearance, and every part has a print orientation and settings on its drawing."
+        ]
+      },
+      {
+        title: "Process",
+        list: [
+          "Modelled the parts in CAD and produced a 10-sheet drawing set: an assembly sheet with a 13-line bill of materials and assembly notes, plus a fully dimensioned drawing for each of the nine printed parts.",
+          "Planned the build order on the drawings, from joining the tiles to fitting the hinges, collars and twist rings, and the folding sequence.",
+          "Kept the bought parts to standard M5 bolts, lock nuts and washers from Canadian Tire, about $19 CAD, with roughly 1.5 kg of PETG for the printed parts."
+        ]
+      },
+      {
+        title: "Status and next steps",
+        list: [
+          "The design and drawings are complete.",
+          "Next: test-print a 50 mm slice of the dovetail seam to check the fit before printing the full tiles, then print, assemble, and test the height lock and folding."
+        ]
+      }
+    ],
+    gallery: [
+      { image: "images/lapdesk/render-in-use.png", caption: "In use, set to 280 mm" },
+      { image: "images/lapdesk/render-folded.png", caption: "Folded, seen from below" }
+    ],
+    drawings: [
+      { name: "Lap Desk Assembly", partNo: "LD-00", image: "images/lapdesk/LD-00-Assembly.png" },
+      { name: "Tile T (tails)", partNo: "LD-01", image: "images/lapdesk/LD-01-Tile-T.png" },
+      { name: "Tile S (sockets)", partNo: "LD-02", image: "images/lapdesk/LD-02-Tile-S.png" },
+      { name: "Leg Sleeve", partNo: "LD-03", image: "images/lapdesk/LD-03-Leg-Sleeve.png" },
+      { name: "Inner Leg", partNo: "LD-04", image: "images/lapdesk/LD-04-Inner-Leg.png" },
+      { name: "Foot Bar", partNo: "LD-05", image: "images/lapdesk/LD-05-Foot-Bar.png" },
+      { name: "Sliding Collar", partNo: "LD-06", image: "images/lapdesk/LD-06-Sliding-Collar.png" },
+      { name: "Twist Ring", partNo: "LD-07", image: "images/lapdesk/LD-07-Twist-Ring.png" },
+      { name: "Lock Peg", partNo: "LD-08", image: "images/lapdesk/LD-08-Lock-Peg.png" },
+      { name: "Wedge Key", partNo: "LD-09", image: "images/lapdesk/LD-09-Wedge-Key.png" }
+    ],
+    tools: ["CAD modelling", "Engineering drawings", "Design for 3D printing", "Mechanism design", "PETG"]
+  },
   {
     name: "Quadcopter",
     status: "In progress",

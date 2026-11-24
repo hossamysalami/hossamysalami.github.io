@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Engineering Portfolio | Hossam Ismail</title>
 <meta name="description" content="Engineering portfolio of Hossam Ismail, Mechanical Engineering Co-op student at the University of Guelph.">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=9">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hossamysalami.github.io/">
@@ -36,55 +36,49 @@
 </header>
 <main>
 <section class="hero home-hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="label"><span class="dot"></span>Mechanical Engineering Co-op &middot; University of Guelph</p>
-      <h1>Hossam Ismail</h1>
-      <p class="lede">I design mechanical systems for <em>aerospace</em>, <em>UAV</em> and <em>rocketry</em> projects. Camera Systems Lead on the Gryphon Aerospace Flight Systems team and a member of the University of Guelph Rocketry Club.</p>
-      <div class="actions">
-        <a class="btn" href="projects.html">View projects &rarr;</a>
-        <a class="btn ghost" href="cad.html">CAD gallery</a>
-      </div>
+  <div class="wrap hero-center">
+    <p class="label"><span class="dot"></span>Mechanical Engineering Co-op &middot; University of Guelph</p>
+    <h1>Hossam Ismail</h1>
+    <p class="lede">I design mechanical systems for <em>aerospace</em>, <em>UAV</em> and <em>rocketry</em> projects, from first sketch to dimensioned drawings and printed parts.</p>
+  </div>
+
+  <div class="wrap featured">
+    <p class="label featured-label">Featured projects</p>
+    <div class="featured-grid">
+      <a class="feature" href="team.html#aerospace">
+        <span class="frame feature-media" style="background:linear-gradient(90deg,#e7e7e7,#dadada)"><img src="images/cad/gimbal-assembly.png" alt="SOLIDWORKS render of the two-axis camera gimbal"></span>
+        <span class="feature-body">
+          <span class="label">Team project &middot; Gryphon Aerospace</span>
+          <strong class="feature-title">Two-axis camera gimbal</strong>
+          <span class="feature-text">Pitch and yaw gimbal carrying the UAV's search and 10x zoom cameras. Designed from start to finish, then redesigned after review so either servo comes out with four screws.</span>
+          <span class="chips"><span>&minus;12.7% mass</span><span>90&deg; pitch / 180&deg; yaw</span><span>18-item BOM</span></span>
+          <span class="arrow">See the project &rarr;</span>
+        </span>
+      </a>
+      <a class="feature" href="personal.html#lapdesk">
+        <span class="frame feature-media" style="background:#f6f7f9"><img src="images/lapdesk/render-in-use.png" alt="Render of the 3D-printed folding lap desk"></span>
+        <span class="feature-body">
+          <span class="label">Personal project</span>
+          <strong class="feature-title">3D-printed folding lap desk</strong>
+          <span class="feature-text">A height-adjustable desk that folds flat, with a dovetailed four-tile top and twist-lock legs. Every structural part prints at home; the hardware costs about $19.</span>
+          <span class="chips"><span>240&ndash;320 mm</span><span>~49 mm folded</span><span>10-sheet drawing set</span></span>
+          <span class="arrow">See the project &rarr;</span>
+        </span>
+      </a>
     </div>
-    <a class="hero-art" href="cad.html#drawings" aria-label="See the gimbal drawings and CAD parts">
-      <img class="art-sheet" src="images/Drawings/GMB-000-Sheet1-Assembly.png" alt="Gimbal assembly drawing">
-      <img class="art-part" src="images/cad/gimbal-assembly.png" alt="SOLIDWORKS render of the full two-axis camera gimbal">
-      <span class="art-tag">GMB-000 &middot; two-axis camera gimbal</span>
-    </a>
+    <div class="actions centered">
+      <a class="btn" href="projects.html">All projects &rarr;</a>
+      <a class="btn ghost" href="cad.html">CAD gallery</a>
+    </div>
   </div>
 </section>
 
 <section class="stats">
   <div class="wrap stats-grid">
-    <div><strong data-count="team">3</strong><span>team projects</span></div>
+    <div><strong data-count="team">4</strong><span>team projects</span></div>
     <div><strong data-count="drawings">9</strong><span>gimbal drawing sheets</span></div>
     <div><strong data-count="cad">6</strong><span>CAD parts in the gallery</span></div>
     <div><strong>2031</strong><span>graduating year</span></div>
-  </div>
-</section>
-
-<section class="section spotlight">
-  <div class="wrap spot-grid">
-    <figure class="spot-art">
-      <video style="display:block;width:100%;max-width:100%;height:auto" width="1280" height="720" src="images/video/gimbal.mp4" poster="images/video/gimbal-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Animation of the gimbal exploding, reassembling, pitching and yawing"></video>
-      <figcaption class="label">Explode, pitch 0&ndash;90&deg;, yaw &plusmn;90&deg;</figcaption>
-    </figure>
-    <div>
-      <p class="label"><span class="dot"></span>Featured project &middot; Gryphon Aerospace</p>
-      <h2>Two-axis camera gimbal</h2>
-      <p class="lede">A pitch and yaw gimbal that carries the UAV's wide search camera and 10x zoom camera, driven by two servos from a Raspberry Pi. I designed it from start to finish and redesigned it after design review: both servos come out with four screws, the horns sit flush in recesses, and every screw is M3 and reachable.</p>
-      <ul class="spot-facts">
-        <li><strong>&minus;12.7%</strong><span>printed mass, 469 g to 410 g</span></li>
-        <li><strong>90&deg; / 180&deg;</strong><span>pitch and yaw range</span></li>
-        <li><strong>18</strong><span>items in the bill of materials</span></li>
-        <li><strong>4 screws</strong><span>to swap either servo</span></li>
-      </ul>
-      <div class="actions">
-        <a class="btn" href="cad.html#drawings">See the drawings &rarr;</a>
-        <a class="btn ghost" href="cad.html">Gimbal parts</a>
-        <a class="btn ghost" href="team.html#aerospace">Team details</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -131,28 +125,6 @@
 
 <section class="section">
   <div class="wrap">
-    <p class="label">Featured work</p>
-    <h2>From drawing to part</h2>
-    <div class="gallery">
-      <a class="tile" href="cad.html#drawings">
-        <span class="frame sheet"><img src="images/Drawings/06-L-Bracket.png" alt="L-bracket drawing" loading="lazy"></span>
-        <span class="tile-caption"><strong>L-Bracket drawing</strong><span class="label">Step 1</span></span>
-      </a>
-      <a class="tile" href="cad.html">
-        <span class="frame"><img src="images/cad/gimbal-l-bracket.png" alt="CAD render of the L-bracket" loading="lazy"></span>
-        <span class="tile-caption"><strong>L-Bracket in SOLIDWORKS</strong><span class="label">Step 2</span></span>
-      </a>
-      <a class="tile" href="cad.html">
-        <span class="frame"><img src="images/cad/pitch-coupler.png" alt="CAD render of the pitch coupler hub" loading="lazy"></span>
-        <span class="tile-caption"><strong>Pitch Coupler Hub</strong><span class="label">Gimbal part</span></span>
-      </a>
-    </div>
-    <div class="actions"><a class="btn ghost" href="cad.html">Open the full gallery &rarr;</a></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
     <p class="label">Skills</p>
     <h2>Tools I work with</h2>
     <div class="skills">
@@ -181,8 +153,8 @@
     <span><a href="mailto:ismailhossam08@gmail.com">Email</a><a href="https://www.linkedin.com/in/hossamismail123" target="_blank" rel="noopener">LinkedIn</a></span>
   </div>
 </footer>
-<script src="data.js?v=4"></script>
-<script src="script.js?v=4"></script>
+<script src="data.js?v=9"></script>
+<script src="script.js?v=9"></script>
 
 </body>
 </html>

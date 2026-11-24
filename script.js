@@ -21,6 +21,7 @@ function openModal(html, wide) {
 
 function closeModal() {
   if (!modal.open) return;
+  modal.querySelectorAll("video").forEach((v) => v.pause());
   modal.classList.remove("open");
   const done = () => modal.open && modal.close();
   modal.addEventListener("transitionend", done, { once: true });
@@ -122,11 +123,15 @@ if (teamGrid) {
         <p class="label">${esc(p.when)} &middot; ${esc(p.status)}</p>
         <h2>${esc(p.name)}</h2>
         <p class="sub">${esc(p.org)}</p>
+        ${p.video ? `<figure class="modal-video">
+          <video src="${esc(p.video)}" poster="${esc(p.poster || "")}" width="1280" height="720" autoplay muted loop playsinline controls preload="metadata" aria-label="${esc(p.videoCaption || "Project animation")}"></video>
+          <figcaption class="label">${esc(p.videoCaption || "")}</figcaption>
+        </figure>` : ""}
         <h4>The competition</h4>
         ${p.competition.map((t) => `<p>${esc(t)}</p>`).join("")}
         <h4>My role: ${esc(p.role)}</h4>
         <p>${esc(p.roleText)}</p>
-        <h4>What I did</h4>
+        <h4>${esc(p.contributionsTitle || "What I did")}</h4>
         <ul>${p.contributions.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
         <h4>Tools and skills</h4>
         <p>${p.tools.map(esc).join(" &middot; ")}</p>
@@ -147,12 +152,51 @@ if (teamGrid) {
 
 const personalGrid = document.getElementById("personal-grid");
 if (personalGrid) {
-  personalGrid.innerHTML = PERSONAL.map((p) => `
-    <article class="card">
+  personalGrid.innerHTML = PERSONAL.map((p, i) => `
+    <article class="card${p.image ? " has-image lift" : ""}">
+      ${p.image ? `<span class="frame card-image"><img src="${esc(p.image)}" alt="Render of the ${esc(p.name)}" loading="lazy"></span>` : ""}
       <span class="status">${esc(p.status)}</span>
       <h3>${esc(p.name)}</h3>
       <p>${esc(p.summary)}</p>
+      ${p.steps ? `<button class="btn small" data-personal="${i}">Details</button>` : ""}
     </article>`).join("");
+
+  const openPersonal = (p) => {
+    const step = (s, n) => `
+      <div class="step">
+        <h4><span class="step-no">${n + 1}</span>${esc(s.title)}</h4>
+        ${(s.text || []).map((t) => `<p>${esc(t)}</p>`).join("")}
+        ${s.list ? `<ul>${s.list.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
+      </div>`;
+    openModal(`
+      <div class="modal-body">
+        <p class="label">${esc(p.when || "")} &middot; ${esc(p.status)}</p>
+        <h2>${esc(p.name)}</h2>
+        <p class="sub">Personal project</p>
+        ${p.gallery ? `<div class="modal-gallery">${p.gallery.map((g) => `
+          <figure><span class="frame"><img src="${esc(g.image)}" alt="${esc(g.caption)}"></span><figcaption class="label">${esc(g.caption)}</figcaption></figure>`).join("")}</div>` : ""}
+        ${p.facts ? `<ul class="spot-facts">${p.facts.map(([a, b]) => `<li><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join("")}</ul>` : ""}
+        ${p.steps.map(step).join("")}
+        ${p.drawings ? `
+          <h4>Drawing set</h4>
+          <p class="hint">Click a sheet to open it full size.</p>
+          <div class="sheet-grid">${p.drawings.map((d) => `
+            <a class="tile" href="${esc(d.image)}" target="_blank" rel="noopener">
+              <span class="frame sheet"><img src="${esc(d.image)}" alt="Drawing of the ${esc(d.name)}" loading="lazy"></span>
+              <span class="tile-caption"><strong>${esc(d.name)}</strong><span class="label">${esc(d.partNo)}</span></span>
+            </a>`).join("")}</div>` : ""}
+        ${p.tools ? `<h4>Tools and skills</h4><p>${p.tools.map(esc).join(" &middot; ")}</p>` : ""}
+      </div>`, true);
+  };
+
+  personalGrid.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-personal]");
+    if (btn) openPersonal(PERSONAL[btn.dataset.personal]);
+  });
+
+  // personal.html#lapdesk opens that project's details straight away.
+  const fromHash = PERSONAL.find((p) => p.id && "#" + p.id === location.hash);
+  if (fromHash) openPersonal(fromHash);
 }
 
 /* ---------- CAD gallery ---------- */
