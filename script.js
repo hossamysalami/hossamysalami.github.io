@@ -174,7 +174,7 @@ if (personalGrid) {
         <h2>${esc(p.name)}</h2>
         <p class="sub">Personal project</p>
         ${p.gallery ? `<div class="modal-gallery">${p.gallery.map((g) => `
-          <figure><span class="frame"><img src="${esc(g.image)}" alt="${esc(g.caption)}"></span><figcaption class="label">${esc(g.caption)}</figcaption></figure>`).join("")}</div>` : ""}
+          <figure><span class="frame"${g.bg ? ` style="background:${esc(g.bg)}"` : ""}><img src="${esc(g.image)}" alt="${esc(g.caption)}"></span><figcaption class="label">${esc(g.caption)}</figcaption></figure>`).join("")}</div>` : ""}
         ${p.facts ? `<ul class="spot-facts">${p.facts.map(([a, b]) => `<li><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join("")}</ul>` : ""}
         ${p.steps.map(step).join("")}
         ${p.drawings ? `

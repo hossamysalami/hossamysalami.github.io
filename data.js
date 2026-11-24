@@ -157,7 +157,7 @@ const PERSONAL = [
       {
         title: "Process",
         list: [
-          "Modelled the parts in CAD and produced a 10-sheet drawing set: an assembly sheet with a 13-line bill of materials and assembly notes, plus a fully dimensioned drawing for each of the nine printed parts.",
+          "Modelled the parts in SOLIDWORKS and produced a 10-sheet drawing set: an assembly sheet with a 13-line bill of materials and assembly notes, plus a fully dimensioned drawing for each of the nine printed parts.",
           "Planned the build order on the drawings, from joining the tiles to fitting the hinges, collars and twist rings, and the folding sequence.",
           "Kept the bought parts to standard M5 bolts, lock nuts and washers from Canadian Tire, about $19 CAD, with roughly 1.5 kg of PETG for the printed parts."
         ]
@@ -172,7 +172,8 @@ const PERSONAL = [
     ],
     gallery: [
       { image: "images/lapdesk/render-in-use.png", caption: "In use, set to 280 mm" },
-      { image: "images/lapdesk/render-folded.png", caption: "Folded, seen from below" }
+      { image: "images/lapdesk/render-folded.png", caption: "Folded, seen from below" },
+      { image: "images/cad/lapdesk-tile-t.png", caption: "Tile T in SOLIDWORKS", bg: "linear-gradient(90deg,#ececec,#dcdcdc)" }
     ],
     drawings: [
       { name: "Lap Desk Assembly", partNo: "LD-00", image: "images/lapdesk/LD-00-Assembly.png" },
@@ -186,7 +187,7 @@ const PERSONAL = [
       { name: "Lock Peg", partNo: "LD-08", image: "images/lapdesk/LD-08-Lock-Peg.png" },
       { name: "Wedge Key", partNo: "LD-09", image: "images/lapdesk/LD-09-Wedge-Key.png" }
     ],
-    tools: ["CAD modelling", "Engineering drawings", "Design for 3D printing", "Mechanism design", "PETG"]
+    tools: ["SOLIDWORKS", "Engineering drawings", "Design for 3D printing", "Mechanism design", "PETG"]
   },
   {
     name: "Quadcopter",
@@ -356,6 +357,15 @@ const CAD = [
     madeFor: "Gryphon Rocketry, recovery hardware fit check",
     purpose:
       "A simplified model of the Piranha line cutter, sized to the real part so it can be placed in the recovery assembly and checked for fit.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Lap Desk Tile T",
+    image: "images/cad/lapdesk-tile-t.png",
+    category: "Personal",
+    madeFor: "3D-printed folding lap desk, personal project (part LD-01)",
+    purpose:
+      "One quarter of the lap desk top, 250 × 160 mm. Dovetail tails along the long edge slide into the matching socket tile, a 3 mm skin over a rib grid keeps it stiff and light, and the hinge stub and snap clip under the top carry the folding leg. Two identical copies are printed.",
     software: "SOLIDWORKS"
   },
   {

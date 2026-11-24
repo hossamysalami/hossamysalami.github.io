@@ -409,7 +409,7 @@ dialog.modal.wide { width: min(1180px, calc(100vw - 32px)); }
 .card.has-image { padding-top: 0; overflow: hidden; }
 .card.has-image .card-image { margin: 0 -26px 6px; border-bottom: 1px solid var(--line); background: #f6f7f9; }
 
-.modal-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
+.modal-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
 .modal-gallery figure { margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .modal-gallery .frame { background: #f6f7f9; }
 .modal-gallery figcaption { padding: 10px 14px; border-top: 1px solid var(--line); }
