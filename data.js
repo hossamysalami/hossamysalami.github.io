@@ -18,43 +18,100 @@ const TEAM = [
     short: "TBWC",
     org: "ENGG*1100 Engineering and Design I, University of Guelph",
     role: "Project Manager",
-    when: "Fall 2026",
-    status: "In progress",
+    when: "October to November 2026",
+    status: "Completed: 3rd in section",
     summary:
-      "A five-person first-year design project: a small motorized wheelchair that carries a teddy bear through a timed course and launches a recyclable item into a bin.",
+      "Section 19, Team 07: an autonomous, Arduino-controlled wheelchair styled as the \"Teddy's Honey\" pickup truck. It carried a teddy bear through a timed ramp course, launched a yogurt cup into a bin, and placed 3rd in our section.",
+    // Card picture on the Team Projects page.
+    image: "images/tbwc/team.jpg",
+    // Shown first, beside the title on the project page.
+    lead: { image: "images/tbwc/team.jpg", caption: "Section 19, Team 07 with the finished TBWC" },
+    video: "images/tbwc/truck-360.mp4",
+    poster: "images/tbwc/truck-360-poster.jpg",
+    videoCaption: "360° view of the finished \"Teddy's Honey\" TBWC, S19-07",
+    gallery: [
+      { image: "images/tbwc/truck.jpg", caption: "The finished TBWC: \"Teddy's Honey\" pickup truck" }
+    ],
+    facts: [
+      ["3rd", "in Section 19"],
+      ["9.22 s", "Accessibility Speed Run, 26/30"],
+      ["26/30", "Recycling Delivery Mission"],
+      ["1200 g", "total mass, full marks (20/20)"]
+    ],
     roleText:
-      "Project manager of a five-person team. I set up and ran the team's meetings, tracked deadlines and deliverables, and kept the team on schedule from concept to prototype demo.",
+      "Project manager and team member of a five-person team. I scheduled and ran our meetings, kept the team logbook, and tracked deadlines and design changes from concept to Challenge Day.",
     steps: [
       {
         title: "Problem",
         text: [
-          "The Teddy Bear Wheelchair Challenge is the first-year design project in ENGG*1100 at the University of Guelph. Each team designs and builds a small motorized wheelchair that carries a teddy bear through a timed course and delivers a recyclable item into a bin, and part of the score depends on keeping the mass low.",
-          "As project manager, I also had to keep five people working to one schedule from concept to prototype demo."
+          "The Teddy Bear Wheelchair Challenge is the first-year design project in ENGG*1100 at the University of Guelph. Each team designs and builds an autonomous, Arduino-controlled wheelchair that carries a teddy bear through a timed ramp course (the Accessibility Speed Run) and delivers a recyclable item over a 32 cm rim into a bin (the Recycling Delivery Mission).",
+          "It also had to stay light, since mass was worth 20 of the 80 performance points, pass a static tipping test on a 30° slope, and pass every teddy bear security and comfort check. As project manager, I had to keep five first-years working to one schedule while all of it came together."
         ]
       },
       {
         title: "Process",
         list: [
-          "Planned the schedule and task ownership with a WBS, Gantt chart and RACI chart, so every remaining task had one accountable member.",
-          "Brainstormed and sketched three delivery concepts: a tilting tray, a trapdoor and a sliding pusher.",
-          "Built weighted decision matrices to choose the chassis layout and the delivery mechanism.",
-          "Helped prototype the servo linkage, and helped rework the chassis width and add wheel retainers when the wheels kept slipping off."
+          "Picked the layout with weighted decision matrices: rear-wheel drive scored 7.70 against 6.90 for front-wheel drive, and a rubber-band catapult scored 7.95 against 6.80 for a tilting tray, mostly on mass and ease of building.",
+          "The build fought back. The wheels kept slipping off and only one axle was long enough for the planned width, so we reworked the chassis and wedged rubber bands into the wheel and pulley holes to take up the play.",
+          "The servo horn holes were too small for Meccano bolts. We tried a Meccano strip linkage, a twist tie and a string pull to connect it.",
+          "We switched from the tilting tray to the catapult, reconsidered the tray, and kept the catapult once it fired reliably.",
+          "After a slow start we moved from online meetings to in-person build sessions in the engineering building. The prototype was finished the night before the demo, with a fix made seconds before it ran.",
+          "The ultrasonic sensor gave inaccurate readings and failed twice, so we switched to an IR sensor that detects a black tape line and fires the servo after a timed delay.",
+          "The whole drivetrain ran on a single rubber band with no spare, and the right band was only found the night before the challenge."
         ]
       },
       {
         title: "Solution",
         list: [
-          "A rear-wheel-drive chassis, chosen through the decision matrix.",
-          "A rubber-band launcher for the delivery, which scored highest for simplicity and low mass.",
-          "Built the front axle and front wheels of the rolling chassis.",
-          "Wrote the introduction, decision-making and team contract review sections of the team prototype report."
+          "A four-wheel Meccano chassis with rear-wheel drive: one DC motor drives the rear axle through a pulley and rubber-band belt, controlled by an Arduino Uno and an L298N motor controller.",
+          "A servo-released rubber-band catapult: rubber bands pre-tension the arm, a single band hooked to an SG90 micro servo holds it back, and when the servo turns, the arm fires a yogurt cup toward the bin.",
+          "An IR sensor that spots a black tape line and triggers the launch after a timed delay.",
+          "A seat cut from half a tissue box with side rests, which passed every safety check without a seatbelt.",
+          "The \"Teddy's Honey\" pickup truck shell: bright yellow body, light blue windows, honey jar and honeycomb graphics, and an S19-07 plate."
+        ]
+      },
+      {
+        title: "Results (Challenge Day, Nov 27, 2026)",
+        list: [
+          "3rd place in Section 19.",
+          "Accessibility Speed Run: 9.22 s on the first attempt, 26/30.",
+          "Recycling Delivery Mission: 26/30. The yogurt cup landed in the bin on the third attempt, minus a 4-point contact penalty, after scores of 18 and 14 and code tuning between attempts.",
+          "Mass: 1200 g, full marks (20/20). Passed the static tipping test and every teddy bear security and comfort test."
+        ]
+      },
+      {
+        title: "What I did",
+        list: [
+          "Project manager: scheduled and ran team meetings, kept the team logbook, and tracked deadlines and design changes.",
+          "Built the WBS, RACI role chart, Gantt chart and a risk register of 8 risks with mitigations and outcomes.",
+          "Built the front axle and front wheels of the chassis.",
+          "Helped brainstorm and sketch the delivery concepts (tilting tray, trapdoor, sliding pusher) and built the weighted decision matrices for the chassis and delivery mechanism.",
+          "Designed the dimensioned cutout template for the pickup truck shell and helped cut the body panels.",
+          "Ran the static tipping test, and reviewed the Arduino code during sensor troubleshooting.",
+          "Wrote the Design Summary and Project Management sections of the team reports."
+        ]
+      },
+      {
+        title: "What I learned",
+        list: [
+          "Test sensors early and keep a fallback: the ultrasonic sensor failed twice before IR line detection worked.",
+          "Keep spares of critical parts: one rubber band was a single point of failure for the whole drivetrain.",
+          "Decision matrices help, but test results make the final call: we only settled on the catapult once it fired reliably.",
+          "Timing-based triggers depend on speed: the TBWC ran slower on Challenge Day, so the release delay had to be tuned live between attempts."
+        ]
+      },
+      {
+        title: "Status",
+        list: [
+          "The challenge is complete. The final design report is due Nov 29, 2026."
         ]
       }
     ],
-    tools: ["Arduino", "Project planning (WBS, Gantt, RACI)", "Decision matrices", "Hands-on prototyping"]
+    tools: ["Project management (WBS, RACI, Gantt, risk register)", "Decision matrices", "Prototyping and testing", "Arduino and sensors", "Mechanical assembly", "Technical writing"]
   },
   {
     id: "aerospace",
+    image: "images/cad/gimbal-assembly.png",
     name: "Two-axis Camera Gimbal",
     short: "UAV camera and gimbal system",
     org: "Gryphon Aerospace Club, Flight Systems Team, University of Guelph",
@@ -113,6 +170,7 @@ const TEAM = [
   },
   {
     id: "rocketry",
+    image: "images/cad/airframe-coupler.png",
     name: "Gryphon Rocketry",
     short: "University of Guelph Rocketry Club",
     org: "Solid and liquid rocket teams, University of Guelph",
@@ -254,12 +312,7 @@ const PERSONAL = [
     ],
     // Parts that are not in the CAD gallery yet (3D views from the drawing set)
     parts: [
-      { name: "Leg Sleeve", partNo: "LD-04", image: "images/lapdesk/parts/leg-sleeve.png" },
-      { name: "Inner Leg", partNo: "LD-05", image: "images/lapdesk/parts/inner-leg.png" },
-      { name: "Foot Bar", partNo: "LD-06", image: "images/lapdesk/parts/foot-bar.png" },
-      { name: "Sliding Collar", partNo: "LD-07", image: "images/lapdesk/parts/sliding-collar.png" },
-      { name: "Twist Ring", partNo: "LD-08", image: "images/lapdesk/parts/twist-ring.png" },
-      { name: "Lock Peg", partNo: "LD-09", image: "images/lapdesk/parts/lock-peg.png" }
+      { name: "Leg Sleeve", partNo: "LD-04", image: "images/lapdesk/parts/leg-sleeve.png" }
     ],
     drawings: [
       { name: "Lap Desk Assembly", partNo: "LD-00", image: "images/lapdesk/LD-00-Assembly.png" },
@@ -511,6 +564,56 @@ const CAD = [
     madeFor: "3D-printed folding lap desk, personal project (part LD-03C)",
     purpose:
       "A 20 mm plug pushed into the outer end of each of the four grooves to hold the splines in. It is 0.1 mm oversize for a snug push fit.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Lap Desk Inner Leg",
+    image: "images/lapdesk/parts/sw-inner-leg.png",
+    category: "Personal",
+    project: "lapdesk",
+    madeFor: "3D-printed folding lap desk, personal project (part LD-05)",
+    purpose:
+      "The Ø20 tube that slides inside each leg sleeve to set the desk height. A twist-ring peg runs up the vertical groove, then turns 90° into one of the five notches to lock the desk at 240 to 320 mm in 20 mm steps. The bottom is glued into the foot bar.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Lap Desk Foot Bar",
+    image: "images/lapdesk/parts/sw-foot-bar.png",
+    category: "Personal",
+    project: "lapdesk",
+    madeFor: "3D-printed folding lap desk, personal project (part LD-06)",
+    purpose:
+      "Joins the bottoms of a pair of inner legs so each side of the desk stands as one frame. The two sockets take the legs, glued with their grooves facing the same way so both height locks line up.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Lap Desk Sliding Collar",
+    image: "images/lapdesk/parts/sw-sliding-collar.png",
+    category: "Personal",
+    project: "lapdesk",
+    madeFor: "3D-printed folding lap desk, personal project (part LD-07)",
+    purpose:
+      "The fold lock. It slides over the hinge stub and the top of the leg sleeve and rests on the sleeve's bump band: pushed up, it holds the leg upright; pushed down past the band, the leg can fold. Both inside edges are chamfered so it slides on smoothly.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Lap Desk Twist Ring",
+    image: "images/lapdesk/parts/sw-twist-ring.png",
+    category: "Personal",
+    project: "lapdesk",
+    madeFor: "3D-printed folding lap desk, personal project (part LD-08)",
+    purpose:
+      "The height lock. It sits on the bottom of the leg sleeve and carries the lock peg through the sleeve's window into the inner leg. Turning it 90° moves the peg from the groove into a notch to lock the height, and the tab shows which way it is set.",
+    software: "SOLIDWORKS"
+  },
+  {
+    name: "Lap Desk Lock Peg",
+    image: "images/lapdesk/parts/sw-lock-peg.png",
+    category: "Personal",
+    project: "lapdesk",
+    madeFor: "3D-printed folding lap desk, personal project (part LD-09)",
+    purpose:
+      "A Ø6 × 7.2 mm peg pressed into the twist ring's hole so it sits flush. Its chamfered tip runs in the inner leg's groove and drops into a notch to hold the desk height, stopping just short of the notch floor so it doesn't rub.",
     software: "SOLIDWORKS"
   },
   {

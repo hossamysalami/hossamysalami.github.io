@@ -459,6 +459,17 @@ dialog.modal.wide { width: min(1180px, calc(100vw - 32px)); }
 
 /* ---------- Project page ---------- */
 .project-head h1 { margin-bottom: 14px; }
+
+/* Optional lead photo beside the title (TBWC team photo) */
+.head-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.head-grid > div { min-width: 0; }
+.lead-photo { margin: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--bg); box-shadow: 0 18px 50px rgba(20, 30, 60, 0.10); }
+.lead-photo img { display: block; width: 100%; height: auto; }
+.lead-photo figcaption { padding: 10px 14px; border-top: 1px solid var(--line); }
+@media (max-width: 860px) {
+  .head-grid { grid-template-columns: 1fr; gap: 24px; }
+  .lead-photo { order: -1; }
+}
 .project-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin-top: 22px; color: var(--muted); font-size: 15px; }
 .project-meta strong { color: var(--ink); font-weight: 600; }
 .jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }

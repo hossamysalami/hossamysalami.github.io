@@ -333,7 +333,9 @@ function wireCards(grid) {
 const teamGrid = document.getElementById("team-grid");
 if (teamGrid) {
   teamGrid.innerHTML = PROJECTS.filter((p) => p.kind === "team")
-    .map((p) => projectCard(p, "", "", `<p class="label">${esc(p.role)}</p>`)).join("");
+    .map((p) => projectCard(p, p.image ? " has-image" : "",
+      p.image ? `<span class="frame card-image"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy"></span>` : "",
+      `<p class="label">${esc(p.role)}</p>`)).join("");
   wireCards(teamGrid);
   // Old links like team.html#aerospace still open the pop-up.
   const fromHash = findProject(location.hash.slice(1));
@@ -393,7 +395,8 @@ if (projectRoot) {
 
     projectRoot.innerHTML = `
       <section class="page-head project-head">
-        <div class="wrap">
+        <div class="wrap${p.lead ? " head-grid" : ""}">
+          <div>
           <p class="label crumbs"><a href="projects.html">Projects</a> / <a href="${listPage[0]}">${listPage[1]}</a> / ${esc(p.name)}</p>
           <h1>${esc(p.name)}</h1>
           <p class="lede">${esc(p.summary)}</p>
@@ -404,6 +407,8 @@ if (projectRoot) {
             ${p.when ? `<span>${esc(p.when)}</span>` : ""}
           </p>
           <nav class="jump" aria-label="On this page">${jump.map(([a, t]) => `<a href="#${a}">${esc(t)}</a>`).join("")}</nav>
+          </div>
+          ${p.lead ? `<figure class="lead-photo"><img src="${esc(p.lead.image)}" alt="${esc(p.lead.caption)}"><figcaption class="label">${esc(p.lead.caption)}</figcaption></figure>` : ""}
         </div>
       </section>
 
