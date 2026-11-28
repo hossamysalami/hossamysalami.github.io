@@ -613,6 +613,29 @@ html { scroll-padding-top: 80px; }
 
 .actions.centered { justify-content: center; margin-top: 36px; }
 
+/* Home page: a smaller card for every project */
+.home-projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  text-align: left;
+}
+.feature.small .feature-media { aspect-ratio: 16 / 10; background: #f1f2f4; }
+.feature.small .feature-media img { object-fit: cover; }
+.feature.small .feature-media.fit { background: #fff; }
+.feature.small .feature-media.fit img { object-fit: contain; }
+.feature.small .card-status { margin-top: auto; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.feature.small .arrow { margin-top: 0; padding-top: 0; }
+.feature.small .feature-body { padding: 16px 18px 18px; gap: 7px; }
+.feature.small .feature-title { font-size: 18px; }
+.feature.small .feature-text { font-size: 14.5px; }
+.feature.small .chips span { font-size: 10.5px; padding: 2px 8px; }
+.feature.small .arrow { font-size: 13.5px; }
+.feature-media.no-image { display: grid; place-items: center; background: linear-gradient(135deg, #eef1f8, #dfe5f3); }
+.feature-media .placeholder { font-weight: 650; font-size: 18px; color: var(--accent); letter-spacing: -0.01em; padding: 0 16px; text-align: center; }
+@media (max-width: 960px) { .home-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .home-projects { grid-template-columns: 1fr; } }
+
 @media (max-width: 760px) {
   .featured-grid { grid-template-columns: 1fr; }
   .featured { margin-top: 40px; }

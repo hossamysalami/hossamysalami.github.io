@@ -11,9 +11,13 @@
       "projectOnly: true" keeps it off the CAD gallery, "galleryOnly: true" off the project page.
 ------------------------------------------------------------------ */
 
+// The order project cards appear in on the home page.
+const HOME_ORDER = ["aerospace", "lapdesk", "tbwc", "rocketry", "cubics"];
+
 const TEAM = [
   {
     id: "tbwc",
+    club: "ENGG*1100",
     name: "Teddy Bear Wheelchair Challenge",
     short: "TBWC",
     org: "ENGG*1100 Engineering and Design I, University of Guelph",
@@ -24,6 +28,8 @@ const TEAM = [
       "Section 19, Team 07: an autonomous, Arduino-controlled wheelchair styled as the \"Teddy's Honey\" pickup truck. It carried a teddy bear through a timed ramp course, launched a yogurt cup into a bin, and placed 3rd in our section.",
     // Card picture on the Team Projects page.
     image: "images/tbwc/team.jpg",
+    blurb: "Autonomous Arduino wheelchair built with a five-person team as project manager. Placed 3rd in our section.",
+    chips: ["3rd in section", "9.22 s run"],
     // Shown first, beside the title on the project page.
     lead: { image: "images/tbwc/team.jpg", caption: "Section 19, Team 07 with the finished TBWC" },
     video: "images/tbwc/truck-360.mp4",
@@ -111,7 +117,10 @@ const TEAM = [
   },
   {
     id: "aerospace",
+    club: "Gryphon Aerospace",
     image: "images/cad/gimbal-assembly.png",
+    blurb: "Pitch and yaw gimbal for the UAV's search and 10x zoom cameras, designed start to finish.",
+    chips: ["−12.7% modelled mass", "90° / 180°"],
     name: "Two-axis Camera Gimbal",
     short: "UAV camera and gimbal system",
     org: "Gryphon Aerospace Club, Flight Systems Team, University of Guelph",
@@ -170,7 +179,10 @@ const TEAM = [
   },
   {
     id: "rocketry",
+    club: "Gryphon Rocketry",
     image: "images/cad/airframe-coupler.png",
+    blurb: "Recovery hardware and airframe CAD for a high-power solid rocket at Launch Canada 2027.",
+    chips: ["3600 lb cords", "SOLIDWORKS"],
     name: "Gryphon Rocketry",
     short: "University of Guelph Rocketry Club",
     org: "Solid and liquid rocket teams, University of Guelph",
@@ -217,6 +229,13 @@ const TEAM = [
   },
   {
     id: "cubics",
+    club: "CUBICS",
+    image: "images/cubics/fit-model.png",
+    gallery: [
+      { image: "images/cubics/fit-model.png", caption: "The team's rough 3U fit model, not a final design" }
+    ],
+    blurb: "Named as Mechanisms and CAD Engineer on the University of Guelph CubeSat application to the CSA.",
+    chips: ["3U CubeSat", "Drag sail"],
     name: "CUBICS CubeSat",
     short: "University of Guelph CubeSat team",
     org: "Mechanical and Thermal sub-team, University of Guelph",
@@ -258,6 +277,8 @@ const TEAM = [
 const PERSONAL = [
   {
     id: "lapdesk",
+    blurb: "Height-adjustable desk that folds flat, with every structural part printed at home.",
+    chips: ["240–320 mm", "48.5 mm folded"],
     name: "3D-Printed Folding Lap Desk",
     status: "Designed, ready to print",
     when: "Fall 2026",

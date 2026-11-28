@@ -328,6 +328,34 @@ function wireCards(grid) {
   grid.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(e); } });
 }
 
+/* ---------- Home page: one card per project ---------- */
+
+const homeGrid = document.getElementById("home-projects");
+if (homeGrid) {
+  const order = (typeof HOME_ORDER !== "undefined" ? HOME_ORDER : PROJECTS.map((p) => p.id))
+    .map(findProject).filter(Boolean);
+  const imageOf = (p) => p.image || (PERSONAL.find((x) => x.id === p.id) || {}).image;
+  homeGrid.innerHTML = order.map((p) => {
+    const img = imageOf(p);
+    const kind = p.kind === "team" ? `Team project &middot; ${esc(p.club || p.org.split(",")[0])}` : "Personal project";
+    const fit = img && /\.png$/i.test(img) ? " fit" : ""; // renders fit inside, photos fill the frame
+    return `
+      <a class="feature small" href="${projectUrl(p.id)}">
+        <span class="frame feature-media${img ? fit : " no-image"}">${img
+          ? `<img src="${esc(img)}" alt="${esc(p.name)}" loading="lazy">`
+          : `<span class="placeholder">${esc(p.name)}</span>`}</span>
+        <span class="feature-body">
+          <span class="label">${kind}</span>
+          <strong class="feature-title">${esc(p.name)}</strong>
+          <span class="feature-text">${esc(p.blurb || p.summary)}</span>
+          ${p.chips ? `<span class="chips">${p.chips.map((c) => `<span>${esc(c)}</span>`).join("")}</span>` : ""}
+          <span class="card-status">${esc(p.status)}</span>
+          <span class="arrow">See the project &rarr;</span>
+        </span>
+      </a>`;
+  }).join("");
+}
+
 /* ---------- Team projects page ---------- */
 
 const teamGrid = document.getElementById("team-grid");
